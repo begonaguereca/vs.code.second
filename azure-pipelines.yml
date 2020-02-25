@@ -1,16 +1,4 @@
 jobs:
-# - job: Windows
-#   pool:
-#     name: dev-windows # ethan's dev machine
-#   steps:
-#   - template: build/azure-pipelines/win32/continuous-build-win32.yml
-
-# - job: Linux
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: build/azure-pipelines/linux/continuous-build-linux.yml
-
 - job: macOS
   pool:
     name: dev # Begona's dev machine
