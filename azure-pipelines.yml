@@ -13,6 +13,6 @@ jobs:
 
 - job: macOS
   pool:
-    name: dev # bee's dev machine
+    name: BegonaDev # bee's dev machine
   steps:
   - template: build/azure-pipelines/darwin/continuous-build-darwin.yml
