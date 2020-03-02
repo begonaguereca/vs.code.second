@@ -15,7 +15,7 @@ jobs:
   pool:
     name: BegonaDev # bee's dev machine
   steps:
-   - script: echo $(Build.Repository.Name)
-   - script: echo $(Pipeline.Workspace)
-   - script: echo $(System.DefaultWorkingDirectory)
+  - script: echo $(Build.Repository.Name)
+  - script: echo $(Pipeline.Workspace)
+  - script: echo $(System.DefaultWorkingDirectory)
   - template: build/azure-pipelines/darwin/continuous-build-darwin.yml
