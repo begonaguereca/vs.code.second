@@ -6,7 +6,7 @@ steps:
     displayName: Cache
     inputs:
       key: 'demo2 | $(Agent.OS) | yarn'
-      path: '$(System.DefaultWorkingDirectory)/.yarn'
+      path: '$(System.DefaultWorkingDirectory)/build'
       cacheHitVar: 'PACKAGES_RESTORED'
 #   - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
 #     inputs:
