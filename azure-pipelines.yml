@@ -15,7 +15,7 @@ jobs:
   pool:
     name: BegonaDev # bee's dev machine
   steps:
-  - script: echo $(Agent.ToolsDirrectory)
+  - script: echo $(Agent.ToolsDirectory)
   - script: echo $(Build.Repository.Name)
   - script: echo $(Pipeline.Workspace)
   - script: echo $(System.DefaultWorkingDirectory)
