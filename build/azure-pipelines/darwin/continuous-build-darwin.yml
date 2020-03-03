@@ -8,31 +8,31 @@ steps:
       key: 'demo2 | $(Agent.OS) | yarn'
       path: '$(System.DefaultWorkingDirectory)/.yarn'
       cacheHitVar: 'PACKAGES_RESTORED'
-  - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
-    inputs:
-      versionSpec: '1.x'
-  - script: |
-      CHILD_CONCURRENCY=1 yarn --frozen-lockfile
-    displayName: Install Dependencies
-    condition: ne(variables['PACKAGES_RESTORED'], 'true')
-  - script: |
-      yarn electron x64
-    displayName: Download Electron
-  - script: |
-      yarn gulp hygiene
-    displayName: Run Hygiene Checks
-  - script: |
-      yarn monaco-compile-check
-    displayName: Run Monaco Editor Checks
-  - script: |
-      yarn valid-layers-check
-    displayName: Run Valid Layers Checks
-  - script: |
-      yarn compile
-    displayName: Compile Sources
-  - script: |
-      yarn download-builtin-extensions
-    displayName: Download Built-in Extensions
+#   - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
+#     inputs:
+#       versionSpec: '1.x'
+#   - script: |
+#       CHILD_CONCURRENCY=1 yarn --frozen-lockfile
+#     displayName: Install Dependencies
+#     condition: ne(variables['PACKAGES_RESTORED'], 'true')
+#   - script: |
+#       yarn electron x64
+#     displayName: Download Electron
+#   - script: |
+#       yarn gulp hygiene
+#     displayName: Run Hygiene Checks
+#   - script: |
+#       yarn monaco-compile-check
+#     displayName: Run Monaco Editor Checks
+#   - script: |
+#       yarn valid-layers-check
+#     displayName: Run Valid Layers Checks
+#   - script: |
+#       yarn compile
+#     displayName: Compile Sources
+#   - script: |
+#       yarn download-builtin-extensions
+#     displayName: Download Built-in Extensions
 # - script: |
 #     ./scripts/test.sh --tfs "Unit Tests"
 #   displayName: Run Unit Tests (Electron)
