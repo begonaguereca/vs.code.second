@@ -5,8 +5,8 @@ steps:
   - task: Cache@2
     displayName: Cache
     inputs:
-      key: '$(Agent.OS) | yarn'
-      path: '$(Pipeline.Workspace)/yarn'
+      key: 'secondTest |  $(Agent.OS) | yarn'
+      path: './src/vs'
   - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
     inputs:
       versionSpec: '1.x'
