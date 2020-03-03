@@ -17,18 +17,18 @@ steps:
   - script: |
       yarn electron x64
     displayName: Download Electron
-  - script: |
-      yarn gulp hygiene
-    displayName: Run Hygiene Checks
-  - script: |
-      yarn monaco-compile-check
-    displayName: Run Monaco Editor Checks
-  - script: |
-      yarn valid-layers-check
-    displayName: Run Valid Layers Checks
-  - script: |
-      yarn compile
-    displayName: Compile Sources
+#   - script: |
+#       yarn gulp hygiene
+#     displayName: Run Hygiene Checks
+#   - script: |
+#       yarn monaco-compile-check
+#     displayName: Run Monaco Editor Checks
+#   - script: |
+#       yarn valid-layers-check
+#     displayName: Run Valid Layers Checks
+#   - script: |
+#       yarn compile
+#     displayName: Compile Sources
 #   - script: |
 #       yarn download-builtin-extensions
 #     displayName: Download Built-in Extensions
