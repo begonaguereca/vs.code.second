@@ -10,7 +10,7 @@ steps:
   displayName: Cache
   inputs:
     key: 'firstWinTest | $(Agent.OS) | yarn'
-    path: '/Users/bguereca/1ESLighthouse/PipelineCaching/EthanAzurePipelineAgent/azure-pipelines-agent/_layout/osx-x64/externals'
+    path: '\Users\etdenn.NORTHAMERICA\Desktop\cache-me'
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
   inputs:
     versionSpec: "1.x"
