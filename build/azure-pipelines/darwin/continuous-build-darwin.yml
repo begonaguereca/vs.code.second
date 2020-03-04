@@ -5,9 +5,8 @@ steps:
 - task: Cache@2
   displayName: Cache
   inputs:
-    key: '$(Agent.ToolsDirectory)'
+    key: 'firstTest | $(Agent.OS) | yarn'
     path: '$(Agent.ToolsDirectory)'
-    cacheHitVar: 'PACKAGES_RESTORED'
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
   inputs:
     versionSpec: "1.x"
@@ -18,21 +17,21 @@ steps:
 - script: |
     yarn electron x64
   displayName: Download Electron
-- script: |
-    yarn gulp hygiene
-  displayName: Run Hygiene Checks
-- script: |
-    yarn monaco-compile-check
-  displayName: Run Monaco Editor Checks
-- script: |
-    yarn valid-layers-check
-  displayName: Run Valid Layers Checks
-- script: |
-    yarn compile
-  displayName: Compile Sources
-- script: |
-    yarn download-builtin-extensions
-  displayName: Download Built-in Extensions
+# - script: |
+#     yarn gulp hygiene
+#   displayName: Run Hygiene Checks
+# - script: |
+#     yarn monaco-compile-check
+#   displayName: Run Monaco Editor Checks
+# - script: |
+#     yarn valid-layers-check
+#   displayName: Run Valid Layers Checks
+# - script: |
+#     yarn compile
+#   displayName: Compile Sources
+# - script: |
+#     yarn download-builtin-extensions
+#   displayName: Download Built-in Extensions
 # - script: |
 #     ./scripts/test.sh --tfs "Unit Tests"
 #   displayName: Run Unit Tests (Electron)
