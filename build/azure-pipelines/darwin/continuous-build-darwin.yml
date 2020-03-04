@@ -31,7 +31,6 @@ steps:
 #     displayName: Compile Sources
 #   - script: |
 #       yarn download-builtin-extensions
-    displayName: Download Built-in Extensions
 # - script: |
 #     ./scripts/test.sh --tfs "Unit Tests"
 #   displayName: Run Unit Tests (Electron)
