@@ -11,7 +11,6 @@ steps:
   inputs:
     key: '$(Agent.OS) | yarn | .yarnrc | remote/.yarnrc | **/yarn.lock,!**/node_modules/**/yarn.lock | salt.txt'
     path: '$(Pipeline.Workspace)/yarn | **/node_modules,!**/node_modules/**/node_modules'
-    cacheHitVar: 'PACKAGES_RESTORED'
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
   inputs:
     versionSpec: "1.x"
@@ -38,18 +37,18 @@ steps:
 - powershell: |
     yarn download-builtin-extensions
   displayName: Download Built-in Extensions
-- powershell: |
-    .\scripts\test.bat --tfs "Unit Tests"
-  displayName: Run Unit Tests (Electron)
-- powershell: |
-    yarn test-browser --browser chromium
-  displayName: Run Unit Tests (Browser)
-- powershell: |
-    .\scripts\test-integration.bat --tfs "Integration Tests"
-  displayName: Run Integration Tests (Electron)
-- task: PublishTestResults@2
-  displayName: Publish Tests Results
-  inputs:
-    testResultsFiles: '*-results.xml'
-    searchFolder: '$(Build.ArtifactStagingDirectory)/test-results'
-  condition: succeededOrFailed()
+# - powershell: |
+#     .\scripts\test.bat --tfs "Unit Tests"
+#   displayName: Run Unit Tests (Electron)
+# - powershell: |
+#     yarn test-browser --browser chromium
+#   displayName: Run Unit Tests (Browser)
+# - powershell: |
+#     .\scripts\test-integration.bat --tfs "Integration Tests"
+#   displayName: Run Integration Tests (Electron)
+# - task: PublishTestResults@2
+#   displayName: Publish Tests Results
+#   inputs:
+#     testResultsFiles: '*-results.xml'
+#     searchFolder: '$(Build.ArtifactStagingDirectory)/test-results'
+#   condition: succeededOrFailed()
