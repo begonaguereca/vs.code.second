@@ -6,7 +6,7 @@ steps:
     displayName: Cache
     inputs:
       key: 'demo6 | $(Agent.OS) | yarn'
-      path: '$(Agent.ToolsDirectory)/**| $(Agent.ToolsDirectory)'
+      path: '$(Agent.ToolsDirectory)/** | $(Agent.ToolsDirectory)'
   - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
     inputs:
       versionSpec: '1.x'
