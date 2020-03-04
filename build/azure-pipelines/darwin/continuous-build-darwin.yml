@@ -5,8 +5,8 @@ steps:
 - task: Cache@2
   displayName: Cache
   inputs:
-    key: 'firstTest | $(Agent.OS) | yarn'
-    path: '$(Agent.ToolsDirectory)'
+    key: 'firstDemo | $(Agent.OS) | yarn'
+    path: '/Users/bguereca/1ESLighthouse/PipelineCaching/EthanAzurePipelineAgent/azure-pipelines-agent/_layout/osx-x64/externals'
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
   inputs:
     versionSpec: "1.x"
