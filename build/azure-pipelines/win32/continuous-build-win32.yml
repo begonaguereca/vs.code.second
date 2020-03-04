@@ -9,7 +9,7 @@ steps:
 - task: Cache@2
   displayName: Cache
   inputs:
-    key: 'thirdWinTest | $(Agent.OS) | package-lock.json'
+    key: 'thirdWinTest | $(Agent.OS) | yarn'
     path: '**/node_modules'
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
   inputs:
